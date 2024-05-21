@@ -3,7 +3,7 @@ body{
     padding: 0;
     font-family: Arial, sans-serif;
 }
-main{
+.landingcontainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,12 +12,12 @@ main{
     background-color: #ecf5fe;
 }
 
-main h1{
+.landingcontainer h1{
     font-size: 3rem;
     color: #56a4eb;
 }
 
-main button{
+.landingcontainer button{
     padding: 15px 20px;
     margin-top: 20px;
     color: #56a4eb;
@@ -27,7 +27,7 @@ main button{
     cursor: pointer;
 }
 
-main button:hover{
+.landingcontainer button:hover{
     background-color: #56a4eb;
     color: #ecf5fe;
 }

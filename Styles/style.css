@@ -44,10 +44,10 @@ body {
 .quiz-header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     padding: 10px 20px;
     position: absolute;
-    top: 0;
+    top: 20px;
 }
 
 .question-number, .score {

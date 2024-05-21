@@ -4,6 +4,7 @@ let quiz = document.querySelector('.quizcontainer');
 let end = document.querySelector('.endcontainer');
 let playAgainBtn = document.querySelector('.play-again');
 let homeBtn = document.querySelector('.go-home');
+let progressBar = document.querySelector('.progress-bar');
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -54,6 +55,7 @@ function startQuiz() {
     score = 0;
     updateQuestionNumber();
     updateScore();
+    updateProgressBar();
 
     const questionContainers = document.getElementsByClassName('question-container');
     for (let i = 0; i < questionContainers.length; i++) {
@@ -75,6 +77,11 @@ function updateQuestionNumber() {
 
 function updateScore() {
     scoreElement.textContent = `Score: ${score}`;
+}
+
+function updateProgressBar() {
+    let progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+    progressBar.style.width = `${progress}%`;
 }
 
 questions.forEach((q, index) => {
@@ -120,6 +127,7 @@ questions.forEach((q, index) => {
                 if (index < questions.length - 1) {
                     currentQuestionIndex++;
                     updateQuestionNumber();
+                    updateProgressBar();
                     document.getElementsByClassName('question-container')[index + 1].style.display = 'block';
                 } else {
                     quiz.style.display = 'none';
